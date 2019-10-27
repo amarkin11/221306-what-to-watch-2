@@ -100,8 +100,8 @@ const App = (props) => {
         </ul>
 
         <div className="catalog__movies-list">
-          {filmTitles.map((it, i) => {
-            return <article className="small-movie-card catalog__movies-card" key={it + i}>
+          {filmTitles.map((it, i) => (
+            <article className="small-movie-card catalog__movies-card" key={it + i}>
               <div className="small-movie-card__image">
                 <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
                   alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/>
@@ -109,8 +109,8 @@ const App = (props) => {
               <h3 className="small-movie-card__title">
                 <a className="small-movie-card__link" href="movie-page.html">{it}</a>
               </h3>
-            </article>;
-          })}
+            </article>
+          ))}
         </div>
         <div className="catalog__more">
           <button className="catalog__button" type="button">Show more</button>
@@ -135,7 +135,7 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  filmTitles: PropTypes.array.isRequired
+  filmTitles: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default App;
