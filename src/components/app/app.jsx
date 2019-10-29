@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const App = (props) => {
-  const {filmTitles} = props;
+  const {filmTitles, onFilmTitleClick} = props;
 
   return <div>
     <section className="movie-card">
@@ -107,7 +107,7 @@ const App = (props) => {
                   alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/>
               </div>
               <h3 className="small-movie-card__title">
-                <a className="small-movie-card__link" href="movie-page.html">{it}</a>
+                <a className="small-movie-card__link" href="movie-page.html" onClick={onFilmTitleClick}>{it}</a>
               </h3>
             </article>
           ))}
@@ -135,7 +135,8 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  filmTitles: PropTypes.arrayOf(PropTypes.string).isRequired
+  filmTitles: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onFilmTitleClick: PropTypes.func.isRequired
 };
 
 export default App;

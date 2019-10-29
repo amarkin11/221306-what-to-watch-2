@@ -14,6 +14,7 @@ const init = () => {
   ReactDOM.render(
       <App
         filmTitles={filmTitles}
+        onFilmTitleClick={() => {}}
       />,
       document.querySelector(`#root`)
   );
