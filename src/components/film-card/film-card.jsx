@@ -1,13 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import VideoPlayer from '../video-player/video-player';
+
 const FilmCard = (props) => {
-  const {data, onCardMouseEnter} = props;
+  const {data, onCardMouseEnter, isPlayVideo} = props;
   const mouseEnterHandler = () => {
-    onCardMouseEnter(data);
+    setTimeout(onCardMouseEnter(data), 1000);
   };
 
   return <article className="small-movie-card catalog__movies-card" onMouseEnter={mouseEnterHandler}>
+    <VideoPlayer
+      data={data}
+      isPlayVideo={isPlayVideo}
+    />
     <div className="small-movie-card__image">
       <img
         src={data.src}
@@ -25,7 +31,8 @@ const FilmCard = (props) => {
 FilmCard.propTypes = {
   data: PropTypes.exact({
     name: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired
+    src: PropTypes.string.isRequired,
+    preview: PropTypes.string.isRequired,
   }).isRequired,
   onCardMouseEnter: PropTypes.func.isRequired,
 };
