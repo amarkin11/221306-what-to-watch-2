@@ -1,4 +1,3 @@
-
 const filmsCards = [
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
