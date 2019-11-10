@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -11,6 +10,14 @@ class FilmsList extends React.PureComponent {
     this.state = {
       activeCard: {}
     };
+
+    this._handleCardMouseEnter = this._handleCardMouseEnter.bind(this);
+  }
+
+  _handleCardMouseEnter(data) {
+    this.setState({
+      activeCard: data
+    });
   }
 
   render() {
@@ -18,8 +25,9 @@ class FilmsList extends React.PureComponent {
 
     return films.map((it) => {
       return <FilmCard
-        film={it}
+        data={it}
         key={it.name}
+        onCardMouseEnter={this._handleCardMouseEnter}
       />;
     });
   }

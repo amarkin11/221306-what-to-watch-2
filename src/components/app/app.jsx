@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -102,9 +101,7 @@ const App = (props) => {
         </ul>
 
         <div className="catalog__movies-list">
-          <FilmList
-            films={films}
-          />
+          <FilmList films={films}/>
         </div>
         <div className="catalog__more">
           <button className="catalog__button" type="button">Show more</button>

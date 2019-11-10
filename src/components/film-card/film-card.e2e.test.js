@@ -1,4 +1,3 @@
-
 import React from "react";
 import Enzyme, {shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
@@ -14,7 +13,7 @@ it(`on hover card with a film, information about the film enters the handler`, (
 
   const mouseEnterHandler = jest.fn();
   const filmCard = shallow(<FilmCard
-    film={FilmCardMock}
+    data={FilmCardMock}
     onCardMouseEnter={mouseEnterHandler}
   />);
 

@@ -1,4 +1,3 @@
-
 import React from "react";
 import renderer from "react-test-renderer";
 import FilmCard from "./film-card";
@@ -11,7 +10,7 @@ it(`Film card correctly renders after relaunch`, () => {
 
   const tree = renderer
     .create(<FilmCard
-      film={FilmCardMock}
+      data={FilmCardMock}
       onCardMouseEnter={jest.fn()}
     />)
     .toJSON();
