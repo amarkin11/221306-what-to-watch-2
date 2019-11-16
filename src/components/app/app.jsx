@@ -128,7 +128,8 @@ const App = (props) => {
 App.propTypes = {
   films: PropTypes.arrayOf(PropTypes.exact({
     name: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired
+    src: PropTypes.string.isRequired,
+    preview: PropTypes.string.isRequired
   })).isRequired
 };
 

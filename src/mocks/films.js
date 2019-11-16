@@ -1,4 +1,4 @@
-const filmsCards = [
+const filmsList = [
   {
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
     src: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
@@ -26,4 +26,4 @@ const filmsCards = [
   },
 ];
 
-export default filmsCards;
+export default filmsList;

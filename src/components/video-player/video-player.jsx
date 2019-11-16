@@ -1,26 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const VideoPlayer = (props) => {
-  const {data, isPlayVideo} = props;
+class VideoPlayer extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    console.log(props);
 
-  return <video
-      width='100%'
-      height='100%'
-      poster={data.src}
-      muted
-    >
-      <source
-        src={data.preview}
-        type='video/mp4'
-      />
-    </video>;
+    this._videoRef = React.createRef();
+
+    this.state = {
+      isPlaying: this.props.isPlaying
+    };
+  }
+
+  componentDidUpdate() {
+    const video = this._videoRef.current;
+    console.log(video.poster);
+
+    if(this.props.isPlaying) {
+      setTimeout(() => {
+        video.play();
+      }, 1000);
+    } else {
+      video.pause();
+    }
+  }
+  
+  render() {
+    const {data} = this.props;
+
+    return <video
+        width='100%'
+        height='100%'
+        poster={data.src}
+        muted
+        ref= {this._videoRef}
+      >
+        <source
+          src={data.preview}
+          type='video/mp4'
+        />
+      </video>;
+  }
 };
 
 VideoPlayer.propTypes = {
   data: PropTypes.exact({
-    preview: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+    preview: PropTypes.string.isRequired
   }).isRequired,
 };
 

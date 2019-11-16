@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import App from './components/app/app';
-import filmsCards from "./mocks/films";
+import filmsList from "./mocks/films";
 
 const init = () => {
   ReactDOM.render(
       <App
-        films={filmsCards}
+        films={filmsList}
       />,
       document.querySelector(`#root`)
   );
