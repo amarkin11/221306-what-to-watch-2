@@ -12,7 +12,7 @@ const FilmsList = (props) => {
       key={it.name}
     />;
   });
-}
+};
 
 FilmsList.propTypes = {
   films: PropTypes.arrayOf(PropTypes.exact({

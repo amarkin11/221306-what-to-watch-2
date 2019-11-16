@@ -9,7 +9,7 @@ class FilmCard extends React.PureComponent {
 
     this.state = {
       isPlaying: false
-    }
+    };
 
     this._handleCardMouseEnter = this._handleCardMouseEnter.bind(this);
     this._handleCardMouseLeave = this._handleCardMouseLeave.bind(this);
@@ -26,7 +26,6 @@ class FilmCard extends React.PureComponent {
       isPlaying: false
     });
   }
-  
 
   render() {
     const {data} = this.props;
@@ -49,7 +48,7 @@ class FilmCard extends React.PureComponent {
       </h3>
     </article>;
   }
-};
+}
 
 FilmCard.propTypes = {
   data: PropTypes.exact({

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 class VideoPlayer extends React.PureComponent {
   constructor(props) {
     super(props);
-    console.log(props);
 
     this._videoRef = React.createRef();
 
@@ -15,9 +14,8 @@ class VideoPlayer extends React.PureComponent {
 
   componentDidUpdate() {
     const video = this._videoRef.current;
-    console.log(video.poster);
 
-    if(this.props.isPlaying) {
+    if (this.props.isPlaying) {
       setTimeout(() => {
         video.play();
       }, 1000);
@@ -25,26 +23,26 @@ class VideoPlayer extends React.PureComponent {
       video.pause();
     }
   }
-  
   render() {
     const {data} = this.props;
 
     return <video
-        width='100%'
-        height='100%'
-        poster={data.src}
-        muted
-        ref= {this._videoRef}
-      >
-        <source
-          src={data.preview}
-          type='video/mp4'
-        />
-      </video>;
+      width='100%'
+      height='100%'
+      poster={data.src}
+      muted
+      ref= {this._videoRef}
+    >
+      <source
+        src={data.preview}
+        type='video/mp4'
+      />
+    </video>;
   }
-};
+}
 
 VideoPlayer.propTypes = {
+  isPlaying: PropTypes.bool.isRequired,
   data: PropTypes.exact({
     name: PropTypes.string.isRequired,
     src: PropTypes.string.isRequired,

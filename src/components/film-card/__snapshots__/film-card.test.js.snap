@@ -4,7 +4,19 @@ exports[`Film card correctly renders after relaunch 1`] = `
 <article
   className="small-movie-card catalog__movies-card"
   onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
+  <video
+    height="100%"
+    muted={true}
+    poster="img/macbeth.jpg"
+    width="100%"
+  >
+    <source
+      src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
+      type="video/mp4"
+    />
+  </video>
   <div
     className="small-movie-card__image"
   >
