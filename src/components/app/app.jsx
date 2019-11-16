@@ -1,9 +1,10 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import FilmList from "../films-list/films-list";
+
 const App = (props) => {
-  const {filmTitles, onFilmTitleClick} = props;
+  const {films} = props;
 
   return <div>
     <section className="movie-card">
@@ -100,17 +101,7 @@ const App = (props) => {
         </ul>
 
         <div className="catalog__movies-list">
-          {filmTitles.map((it, i) => (
-            <article className="small-movie-card catalog__movies-card" key={it + i}>
-              <div className="small-movie-card__image">
-                <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-                  alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/>
-              </div>
-              <h3 className="small-movie-card__title">
-                <a className="small-movie-card__link" href="movie-page.html" onClick={onFilmTitleClick}>{it}</a>
-              </h3>
-            </article>
-          ))}
+          <FilmList films={films}/>
         </div>
         <div className="catalog__more">
           <button className="catalog__button" type="button">Show more</button>
@@ -135,8 +126,10 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  filmTitles: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onFilmTitleClick: PropTypes.func.isRequired
+  films: PropTypes.arrayOf(PropTypes.exact({
+    name: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired
+  })).isRequired
 };
 
 export default App;

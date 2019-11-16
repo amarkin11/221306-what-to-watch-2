@@ -1,8 +1,8 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import App from './app';
+import React from "react";
+import renderer from "react-test-renderer";
+import FilmsList from "./films-list";
 
-it(`App correctly renders after relaunch`, () => {
+it(`Film card correctly renders after relaunch`, () => {
   const filmsListMock = [
     {
       name: `Macbeth`,
@@ -13,8 +13,9 @@ it(`App correctly renders after relaunch`, () => {
       src: `img/aviator.jpg`
     },
   ];
+
   const tree = renderer
-    .create(<App
+    .create(<FilmsList
       films={filmsListMock}
     />)
     .toJSON();
